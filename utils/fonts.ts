@@ -11,44 +11,37 @@ import {
 export const inter = Inter({
   weight: "400",
   subsets: ["latin"],
-  display: "swap",
 });
 
 export const roboto = Roboto({
   weight: "400",
   subsets: ["latin"],
-  display: "swap",
 });
 
 export const roboto_condensed = Roboto_Condensed({
   weight: "400",
   subsets: ["latin"],
-  display: "swap",
 });
 
 export const monteserrat = Montserrat_Alternates({
   weight: "400",
   subsets: ["latin"],
-  display: "swap",
 });
 
 export const pacifico = Pacifico({
   weight: "400",
   subsets: ["latin"],
-  display: "swap",
 });
 
 export const dmSerif = DM_Serif_Display({
   weight: "400",
-  style: ["normal", "italic"],
+  style: ["normal"],
   subsets: ["latin"],
-  display: "swap",
 });
 
 export const dancingScript = Dancing_Script({
   weight: ["400", "700"],
   subsets: ["latin"],
-  display: "swap",
 });
 
 const fontList = [

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Cropper, { Area } from "react-easy-crop";
+import { Crop } from "lucide-react";
 import {
   Dialog,
   DialogClose,
@@ -17,12 +18,15 @@ export function ImageCropper({
   image,
   onCropDone,
   onCropCancel,
+  open,
+  setOpen,
 }: {
   image: string;
   onCropDone: (croppedArea: Area) => void;
   onCropCancel: () => void;
+  open: boolean;
+  setOpen: (open: boolean) => void;
 }) {
-  const [open, setOpen] = useState(false);
   const [crop, setCrop] = useState({ x: 0, y: 0 });
   const [zoom, setZoom] = useState(1);
   const [croppedArea, setCroppedArea] = useState<Area | null>(null);
@@ -42,8 +46,12 @@ export function ImageCropper({
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button variant="link" className="text-white underline">
-          Crop Image
+        <Button
+          variant="secondary"
+          size="sm"
+          className="bg-white/10 hover:bg-white/20 text-white border border-white/10 backdrop-blur-md gap-2 w-full"
+        >
+          <Crop className="w-4 h-4" />
         </Button>
       </DialogTrigger>
 
@@ -64,7 +72,7 @@ export function ImageCropper({
           />
         </div>
 
-        <DialogFooter className="p-4 border-t flex justify-between">
+        <DialogFooter className="p-4 border-t flex justify-between gap-2">
           <DialogClose asChild>
             <Button variant="secondary" onClick={onCropCancel}>
               Cancel

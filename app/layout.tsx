@@ -20,7 +20,7 @@ export default function RootLayout({
         <main className="min-h-svh flex flex-col justify-center ">
           {children}
         </main>
-        <Toaster richColors closeButton />
+        <Toaster closeButton />
       </body>
     </html>
   );
